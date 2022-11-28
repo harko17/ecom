@@ -77,7 +77,7 @@ class _ViewCartState extends State<ViewCart> {
                                 .copyWith(color: Colors.black),
                           ),
                           Text(
-                            "\$${cartItems[index].product.price.toString()}\n",
+                            "\Rs. ${cartItems[index].product.price.toString()}\n",
                             style: TextStyle(fontSize: 20, color: Colors.black),
                           ),
                           Row(
@@ -117,7 +117,7 @@ class _ViewCartState extends State<ViewCart> {
               alignment: Alignment.bottomCenter,
               child: Container(
                   decoration: BoxDecoration(color: Colors.white),
-                  child: Text("Total: ${getTotal()}",
+                  child: Text("Total Amount: Rs. ${getTotal()}",
                       style: TextStyle(
                         fontSize: 30,
                       ))),

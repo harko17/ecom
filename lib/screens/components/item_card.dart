@@ -40,7 +40,7 @@ class ItemCard extends StatelessWidget {
             ),
           ),
           Text(
-            "\$${product.price}",
+            "\Rs. ${product.price}",
             style: TextStyle(fontWeight: FontWeight.bold),
           )
         ],

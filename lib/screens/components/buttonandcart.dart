@@ -1,5 +1,6 @@
 import 'package:ecom/const.dart';
 import 'package:ecom/models/product.dart';
+import 'package:ecom/screens/home.dart';
 import 'package:ecom/screens/view_cart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -41,13 +42,18 @@ class ButtonAndCart extends StatelessWidget {
             child: SizedBox(
               height: 50,
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const HomeScreen()),
+                  );
+                },
                 style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(product.color),
                     shape: MaterialStateProperty.all(RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(18)))),
                 child: Text(
-                  "Buy now",
+                  "Compare now",
                   style: TextStyle(
                       fontSize: 17,
                       fontWeight: FontWeight.bold,
