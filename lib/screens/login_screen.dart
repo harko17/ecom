@@ -67,64 +67,66 @@ class LoginScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Container(
-              height: 510,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(topLeft: Radius.circular(15), topRight: Radius.circular(15)),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Center(child: Text("Shopeaz",style: TextStyle(fontSize: 35, color: Colors.deepOrange,fontWeight: FontWeight.bold),)),
-                    SizedBox(height: 20),
-                    userInput(emailController, 'Email', TextInputType.emailAddress),
-                    userInput(passwordController, 'Password', TextInputType.visiblePassword),
-                    Container(
-                      height: 55,
-                      // for an exact replicate, remove the padding.
-                      // pour une réplique exact, enlever le padding.
-                      padding: const EdgeInsets.only(top: 5, left: 70, right: 70),
-                      child: RaisedButton(
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-                        color: Colors.deepOrange,
-                        onPressed: () {
-                          print(emailController);
-                          print(passwordController);
-                         //Provider.of<Auth>(context, listen: false).login(emailController.text, passwordController.text);
-                          Navigator.of(context).push(MaterialPageRoute(builder: (ctx) => HomeScreen1()));
-                        },
-                        child: Text('Login', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700, color: Colors.white,),),
+            SingleChildScrollView(
+              child: Container(
+                height: 510,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(topLeft: Radius.circular(15), topRight: Radius.circular(15)),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Center(child: Text("Shopeaz",style: TextStyle(fontSize: 35, color: Colors.deepOrange,fontWeight: FontWeight.bold),)),
+                      SizedBox(height: 20),
+                      userInput(emailController, 'Email', TextInputType.emailAddress),
+                      userInput(passwordController, 'Password', TextInputType.visiblePassword),
+                      Container(
+                        height: 55,
+                        // for an exact replicate, remove the padding.
+                        // pour une réplique exact, enlever le padding.
+                        padding: const EdgeInsets.only(top: 5, left: 70, right: 70),
+                        child: RaisedButton(
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+                          color: Colors.deepOrange,
+                          onPressed: () {
+                            print(emailController);
+                            print(passwordController);
+                           //Provider.of<Auth>(context, listen: false).login(emailController.text, passwordController.text);
+                            Navigator.of(context).push(MaterialPageRoute(builder: (ctx) => HomeScreen1()));
+                          },
+                          child: Text('Login', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700, color: Colors.white,),),
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      Center(child: Text('Forgot password ?'),),
+                      SizedBox(height: 20),
+                      Center(child: Text('New User? Create Account'),
+                      ),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      //Text('Don\'t have an account yet ? ', style: TextStyle(color: Colors.grey, fontStyle: FontStyle.italic),),
+                      TextButton(
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(builder: (ctx) => SignupScreen()));
+
+                      },
+                      child: Text(
+                        'Sign Up',
+                        style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
                       ),
                     ),
-                    SizedBox(height: 20),
-                    Center(child: Text('Forgot password ?'),),
-                    SizedBox(height: 20),
-                    Center(child: Text('New User? Create Account'),
-                    ),
-
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    //Text('Don\'t have an account yet ? ', style: TextStyle(color: Colors.grey, fontStyle: FontStyle.italic),),
-                    TextButton(
-                    onPressed: () {
-                      Navigator.of(context).push(MaterialPageRoute(builder: (ctx) => SignupScreen()));
-
-                    },
-                    child: Text(
-                      'Sign Up',
-                      style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
-                    ),
+                    ],
                   ),
-                  ],
-                ),
 
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),

@@ -106,137 +106,139 @@ class HomeScreen extends StatelessWidget {
         ),
 
         backgroundColor: Colors.white,
-        body: Column(
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ImageSlideshow(
-                /// Width of the [ImageSlideshow].
-                width: double.maxFinite,
-                height: 400.0,
+        body: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ImageSlideshow(
+                  /// Width of the [ImageSlideshow].
+                  width: double.maxFinite,
+                  height: 400.0,
 
 
-                /// Height of the [ImageSlideshow].
+                  /// Height of the [ImageSlideshow].
 
 
-                /// The page to show when first creating the [ImageSlideshow].
-                initialPage: 0,
+                  /// The page to show when first creating the [ImageSlideshow].
+                  initialPage: 0,
 
-                /// The color to paint the indicator.
-                indicatorColor: Colors.black,
+                  /// The color to paint the indicator.
+                  indicatorColor: Colors.black,
 
-                /// The color to paint behind th indicator.
-                indicatorBackgroundColor: Colors.grey,
+                  /// The color to paint behind th indicator.
+                  indicatorBackgroundColor: Colors.grey,
 
-                /// The widgets to display in the [ImageSlideshow].
-                /// Add the sample image file into the images folder
-                children: [
-                  Image.asset(
-                    'assets/e1.jpg',
-                    fit: BoxFit.contain,
-                  ),
-                  Image.asset(
-                    'assets/e2.jpg',
-                    fit: BoxFit.contain,
-                  ),
-                  Image.asset(
-                    'assets/e3.jpg',
-                    fit: BoxFit.contain,
-                  ),
+                  /// The widgets to display in the [ImageSlideshow].
+                  /// Add the sample image file into the images folder
+                  children: [
+                    Image.asset(
+                      'assets/e1.jpg',
+                      fit: BoxFit.contain,
+                    ),
+                    Image.asset(
+                      'assets/e2.jpg',
+                      fit: BoxFit.contain,
+                    ),
+                    Image.asset(
+                      'assets/e3.jpg',
+                      fit: BoxFit.contain,
+                    ),
 
-                  Image.asset(
-                    'assets/e4.jpg',
-                    fit: BoxFit.contain,
-                  ),
-                  Image.asset(
-                    'assets/e5.jpg',
-                    fit: BoxFit.contain,
-                  ),
-                  Image.asset(
-                    'assets/e6.jpg',
-                    fit: BoxFit.contain,
-                  ),
-                ],
+                    Image.asset(
+                      'assets/e4.jpg',
+                      fit: BoxFit.contain,
+                    ),
+                    Image.asset(
+                      'assets/e5.jpg',
+                      fit: BoxFit.contain,
+                    ),
+                    Image.asset(
+                      'assets/e6.jpg',
+                      fit: BoxFit.contain,
+                    ),
+                  ],
 
-                /// Called whenever the page in the center of the viewport changes.
+                  /// Called whenever the page in the center of the viewport changes.
 
 
-                /// Auto scroll interval.
-                /// Do not auto scroll with null or 0.
-                autoPlayInterval: null,
+                  /// Auto scroll interval.
+                  /// Do not auto scroll with null or 0.
+                  autoPlayInterval: null,
 
-                /// Loops back to first slide.
-                isLoop: true,
-              ),
-            ),
-            Column(
-              children: [
-                Center(child: Text("Compare Now",style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold),)),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: ElevatedButton(
-                    child: Text('   Price   ',style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.black
-                    ),),
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => homo()));
-                    },
-                    style: ElevatedButton.styleFrom(
-                        primary: Colors.white70,
-                        padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
-                        textStyle: TextStyle(
-                            fontSize: 20,
-                          color: Colors.black
-                            )),
-                  ),
+                  /// Loops back to first slide.
+                  isLoop: true,
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: ElevatedButton(
-                    child: Text('Reviews',style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.black
-                    ),),
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Compare()));
-                    },
-                    style: ElevatedButton.styleFrom(
-                        primary: Colors.white70,
-                        padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
-                        textStyle: TextStyle(
+              ),
+              Column(
+                children: [
+                  Center(child: Text("Compare Now",style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold),)),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ElevatedButton(
+                      child: Text('   Price   ',style: TextStyle(
                           fontSize: 20,
+                          color: Colors.black
+                      ),),
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => homo()));
+                      },
+                      style: ElevatedButton.styleFrom(
+                          primary: Colors.white70,
+                          padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                          textStyle: TextStyle(
+                              fontSize: 20,
                             color: Colors.black
-                        )
+                              )),
                     ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: ElevatedButton(
-                    child: Text('Schedule Delivery'),
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                        primary: Colors.orangeAccent,
-                        padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
-                        textStyle: TextStyle(
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ElevatedButton(
+                      child: Text('Reviews',style: TextStyle(
                           fontSize: 20,
-                        )),
+                          color: Colors.black
+                      ),),
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Compare()));
+                      },
+                      style: ElevatedButton.styleFrom(
+                          primary: Colors.white70,
+                          padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                          textStyle: TextStyle(
+                            fontSize: 20,
+                              color: Colors.black
+                          )
+                      ),
+                    ),
                   ),
-                ),
-              ],
-            ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ElevatedButton(
+                      child: Text('Schedule Delivery'),
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                          primary: Colors.orangeAccent,
+                          padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                          textStyle: TextStyle(
+                            fontSize: 20,
+                          )),
+                    ),
+                  ),
+                ],
+              ),
 
-            // create widgets for each tab bar here
+              // create widgets for each tab bar here
 
 
 
-          ],
+            ],
 
+          ),
         ),
       ),
     );
